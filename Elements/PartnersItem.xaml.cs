@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bugrina_UP01.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace Bugrina_UP01.Elements
     /// </summary>
     public partial class Partners : UserControl
     {
-        public Partners()
+        public Partners(PartnersContext partnersContext)
         {
             InitializeComponent();
+            typeLbl.Content = partnersContext.type_partn;
+            nameLbl.Content = partnersContext.company_name;
+            directorLbl.Content = partnersContext.fio_director;
+            phoneLbl.Content = partnersContext.number_phone;
+            raytingLbl.Content = partnersContext.rayting;
+            saleLbl.Content = partnersContext.skidka + " % ";
         }
     }
 }
