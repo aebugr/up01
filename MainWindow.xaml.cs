@@ -20,9 +20,21 @@ namespace Bugrina_UP01
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow init;
+
         public MainWindow()
         {
             InitializeComponent();
+            init = this;
+            OpenPage(new Pages.Partners());
+        }
+        public void OpenPage(Page Page)
+        {
+            frame.Navigate(Page);
+        }
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
